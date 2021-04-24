@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css'></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-dark.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css"></link>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body translate="no">
+<section>
+<div class="container">
+    <div class="code-container">
+        <div class="code-1">
+            <textarea id="code1"><!-- HTML --></textarea><br>
+        </div>
+        <div class="code-1">
+            <textarea id="code2"><!-- CSS (starts with style tag)--></textarea><br>
+        </div>
+        <div class="code-1">
+            <textarea id="code3"><!-- JAVA (starts with script tag)--></textarea><br>
+        </div>
+    </div>
+    <div class="run-btn">
+        <button onclick="run()">Run code!</button>
+    </div>
+    <div class="code-container">
+        <iframe id="code_result" width="100%" height="500px" style="border: 5px solid gray; background-color: white; color: black;"></iframe>
+    </div>
+</div>
+</section>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/xml/xml.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/css/css.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/javascript/javascript.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/htmlmixed/htmlmixed.js'></script>
+<script id="rendered-js">
+var doc = document.getElementById('code_result').contentWindow.document;
+var html_value;
+var css_value;
+var js_value;
+var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
+    styleActiveLine: true,
+    lineNumbers: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    autoCloseTags: true,
+    mode: "htmlmixed",
+    theme: "monokai",
+});
+var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+    styleActiveLine: true,
+    lineNumbers: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    autoCloseTags: true,
+    mode: "htmlmixed",
+    // theme: "base16-dark",
+    theme: "monokai",
+});
+var editor3 = CodeMirror.fromTextArea(document.getElementById("code3"), {
+    styleActiveLine: true,
+    lineNumbers: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    autoCloseTags: true,
+    mode: "htmlmixed",
+    // theme: "base16-dark",
+    theme: "monokai",
+});
+</script>
+<script src="./script/app.js"></script>
+</body>
+
+</html>

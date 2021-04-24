@@ -1,0 +1,21 @@
+<body>
+  <h1>This is heading</h1>
+  <p id="demo"></p>
+  <button onclick="btnclk()">Click Me</button>
+</body>
+
+<style>
+  h1{
+    color: red;
+  }
+  button{
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<script>
+  function btnclk(){
+    document.getElementById("demo").innerHTML  = "Hello World";
+  }
+</script>
