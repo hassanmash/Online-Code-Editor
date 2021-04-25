@@ -4,10 +4,43 @@
 <meta charset="UTF-8">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css'></link>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-dark.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-light.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/dracula.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-day.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-night.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/eclipse.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/mdn-like.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/midnight.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/neat.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/rubyblue.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-dark.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-light.css"></link>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css"></link>
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body translate="no">
+    <section>
+        <div class="nav-bar">
+            <div class="theme-select">
+                <label for="codeMode">Select the theme: </label>
+                <select name="codeMode" id="codeMode" onchange="changeFunc()">
+                    <option value="monokai">Monokai</option>
+                    <option value="base16-dark">Base-16 Dark</option>
+                    <option value="base16-light">Base-16 Light</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="3024-day">3024-Day</option>
+                    <option value="3024-night">3024-Night</option>
+                    <option value="eclipse">Eclipse</option>
+                    <option value="mdn-like">Mdn-Like</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="neat">Neat</option>
+                    <option value="rubyblue">RubyBlue</option>
+                    <option value="xq-dark">Xq-Dark</option>
+                    <option value="xq-light">Xq-Light</option>
+                </select>
+            </div>
+        </div>
+    </section>
 <section>
 <div class="container">
     <div class="code-container">
@@ -18,7 +51,7 @@
             <textarea id="code2"><!-- CSS (starts with style tag)--></textarea><br>
         </div>
         <div class="code-1">
-            <textarea id="code3"><!-- JS (starts with script tag)--></textarea><br>
+            <textarea id="code3"><!-- JAVA (starts with script tag)--></textarea><br>
         </div>
     </div>
     <div class="run-btn">
@@ -39,6 +72,57 @@ var doc = document.getElementById('code_result').contentWindow.document;
 var html_value;
 var css_value;
 var js_value;
+var themeCode;
+themeCode = "monokai";
+function changeFunc() {
+    var selectBox = document.getElementById("codeMode");
+    var selectVal = selectBox.options[selectBox.selectedIndex].value;
+    if (selectVal == "monokai"){
+        themeCode = "monokai";
+    }
+    else if (selectVal == "monokai"){
+        themeCode = "monokai";
+    }
+    else if (selectVal == "base16-dark"){
+        themeCode = "base16-dark";
+    }
+    else if (selectVal == "base16-light"){
+        themeCode = "base16-light";
+    }
+    else if (selectVal == "dracula"){
+        themeCode = "dracula";
+    }
+    else if (selectVal == "3024-day"){
+        themeCode = "3024-day";
+    }
+    else if (selectVal == "3024-night"){
+        themeCode = "3024-night";
+    }
+    else if (selectVal == "eclipse"){
+        themeCode = "eclipse";
+    }
+    else if (selectVal == "mdn-like"){
+        themeCode = "mdn-like";
+    }
+    else if (selectVal == "midnight"){
+        themeCode = "midnight";
+    }
+    else if (selectVal == "neat"){
+        themeCode = "neat";
+    }
+    else if (selectVal == "rubyblue"){
+        themeCode = "rubyblue";
+    }
+    else if (selectVal == "xq-dark"){
+        themeCode = "xq-dark";
+    }
+    else if (selectVal == "xq-light"){
+        themeCode = "xq-light";
+    }
+    editor1.setOption("theme",themeCode);
+    editor2.setOption("theme",themeCode);
+    editor3.setOption("theme",themeCode);
+   }
 var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
     styleActiveLine: true,
     lineNumbers: true,
@@ -46,7 +130,8 @@ var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
     autoCloseBrackets: true,
     autoCloseTags: true,
     mode: "htmlmixed",
-    theme: "monokai",
+    // theme: "monokai",
+    theme: themeCode,
 });
 var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
     styleActiveLine: true,
@@ -56,7 +141,7 @@ var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
     autoCloseTags: true,
     mode: "htmlmixed",
     // theme: "base16-dark",
-    theme: "monokai",
+    theme: themeCode,
 });
 var editor3 = CodeMirror.fromTextArea(document.getElementById("code3"), {
     styleActiveLine: true,
@@ -66,7 +151,7 @@ var editor3 = CodeMirror.fromTextArea(document.getElementById("code3"), {
     autoCloseTags: true,
     mode: "htmlmixed",
     // theme: "base16-dark",
-    theme: "monokai",
+    theme: themeCode,
 });
 </script>
 <script src="./script/app.js"></script>
