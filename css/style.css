@@ -1,5 +1,7 @@
 body{
     background-color: #444444;
+    margin: 0;
+    padding: 0;
 }
 
 .code-container{
@@ -56,3 +58,88 @@ button:hover{
     background-color: rgb(255, 123, 123);
     transition: 0.7s;
 }
+
+.nav-bar{
+    width: 100%;
+    background-color: #666666;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    color: white;
+}
+
+.theme-select{
+    float: right;
+    margin: 4px 10px 4px 0;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+/* Media Query for Mobile Devices
+@media (max-width: 480px) {
+    body {
+        background-color: red;
+    }
+} */
+  
+/* Media Query for low resolution  Tablets, Ipads
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-color: yellow;
+    }
+} */
+  
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+    .nav-bar{
+        height: 100px;
+    }
+    .theme-select{
+        float: right;
+        margin: 25px 10px 10px 0;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    #codeMode{
+        font-size: 25px;
+    }
+    .code-1{
+        width: 100%;
+        display: inline-block;
+        min-height: 250px;
+        overflow: scroll;
+        font-size: 35px;
+    }
+    button{
+        width: 40%;
+        height: 120px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(223, 0, 0);
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0;
+        padding: 0;
+        font-size: 45px;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+    iframe{
+        font-size: 35px;
+    }
+}
+  
+/* Media Query for Laptops and Desktops
+@media (min-width: 1025px){
+    body {
+        background-color: green;
+    }
+} */
+  
+/* Media Query for Large screens
+@media (min-width: 1281px) {
+    body {
+        background-color: white;
+    }
+} */
