@@ -76,49 +76,7 @@ var themeCode;
 themeCode = "monokai";
 function changeFunc() {
     var selectBox = document.getElementById("codeMode");
-    var selectVal = selectBox.options[selectBox.selectedIndex].value;
-    if (selectVal == "monokai"){
-        themeCode = "monokai";
-    }
-    else if (selectVal == "monokai"){
-        themeCode = "monokai";
-    }
-    else if (selectVal == "base16-dark"){
-        themeCode = "base16-dark";
-    }
-    else if (selectVal == "base16-light"){
-        themeCode = "base16-light";
-    }
-    else if (selectVal == "dracula"){
-        themeCode = "dracula";
-    }
-    else if (selectVal == "3024-day"){
-        themeCode = "3024-day";
-    }
-    else if (selectVal == "3024-night"){
-        themeCode = "3024-night";
-    }
-    else if (selectVal == "eclipse"){
-        themeCode = "eclipse";
-    }
-    else if (selectVal == "mdn-like"){
-        themeCode = "mdn-like";
-    }
-    else if (selectVal == "midnight"){
-        themeCode = "midnight";
-    }
-    else if (selectVal == "neat"){
-        themeCode = "neat";
-    }
-    else if (selectVal == "rubyblue"){
-        themeCode = "rubyblue";
-    }
-    else if (selectVal == "xq-dark"){
-        themeCode = "xq-dark";
-    }
-    else if (selectVal == "xq-light"){
-        themeCode = "xq-light";
-    }
+    var themeCode = selectBox.options[selectBox.selectedIndex].value;
     editor1.setOption("theme",themeCode);
     editor2.setOption("theme",themeCode);
     editor3.setOption("theme",themeCode);
