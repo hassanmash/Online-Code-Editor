@@ -91,7 +91,7 @@ button:hover{
 } */
   
 /* Media Query for Tablets Ipads portrait mode */
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 786px){
     .nav-bar{
         height: 100px;
     }
