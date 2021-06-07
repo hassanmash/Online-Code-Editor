@@ -1,19 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
@@ -34,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-light.css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css"></link>
     <link rel="stylesheet" href="./css/style.css">
+    <title>Online Code Editor</title>
     <link rel="icon" href="./CDE.png">
 </head>
 <body translate="no">
@@ -66,10 +52,22 @@
             <textarea id="code1"><!-- HTML --></textarea><br>
         </div>
         <div class="code-1">
-            <textarea id="code2"><!-- CSS (starts with style tag)--></textarea><br>
+            <textarea id="code2">
+<!-- CSS (starts with style tag)-->
+<style>
+  body{
+    background-color: black;
+  }
+</style>
+            </textarea><br>
         </div>
         <div class="code-1">
-            <textarea id="code3"><!-- JAVA (starts with script tag)--></textarea><br>
+            <textarea id="code3">
+<!-- JAVA (starts with script tag)-->
+<script>
+    alert("Hello World!")
+</script>
+            </textarea><br>
         </div>
     </div>
     <div class="run-btn">
