@@ -91,29 +91,29 @@ button:hover{
 } */
   
 /* Media Query for Tablets Ipads portrait mode */
-@media (min-width: 768px) and (max-width: 1025px) {
+@media screen and (max-width: 736px){
     .nav-bar{
-        height: 100px;
+        height: 35px;
     }
     .theme-select{
         float: right;
-        margin: 25px 10px 10px 0;
+        /* margin: 15px 10px 0 0; */
         font-weight: bold;
-        font-size: 40px;
+        /* font-size: 40px; */
     }
-    #codeMode{
+    /* #codeMode{
         font-size: 25px;
-    }
+    } */
     .code-1{
         width: 100%;
         display: inline-block;
         min-height: 250px;
         overflow: scroll;
-        font-size: 35px;
+        /* font-size: 35px; */
     }
     button{
-        width: 40%;
-        height: 120px;
+        width: 70%;
+        /* height: 120px; */
         color: rgb(255, 255, 255);
         background-color: rgb(223, 0, 0);
         margin: auto;
@@ -121,13 +121,13 @@ button:hover{
         margin-bottom: 10px;
         border: 0;
         padding: 0;
-        font-size: 45px;
+        /* font-size: 45px; */
         font-weight: bold;
         border-radius: 15px;
     }
-    iframe{
+    /* iframe{
         font-size: 35px;
-    }
+    } */
 }
   
 /* Media Query for Laptops and Desktops
