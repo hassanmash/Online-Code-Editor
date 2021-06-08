@@ -4,30 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css'></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-dark.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-light.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/dracula.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-day.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-night.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/eclipse.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/mdn-like.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/midnight.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/neat.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/rubyblue.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-dark.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-light.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css"></link>
-    <link rel="stylesheet" href="./css/style.css">
     <title>Online Code Editor</title>
     <link rel="icon" href="./CDE.png">
+    
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./script/app.js"></script>
 </head>
 <body translate="no">
     <section>
         <div class="nav-bar">
             <div class="theme-select">
                 <label for="codeMode">Select the theme: </label>
-                <select name="codeMode" id="codeMode" onchange="changeFunc()">
+                <select name="codeMode" id="codeMode" onchange="themeChange()">
                     <option value="monokai">Monokai</option>
                     <option value="base16-dark">Base-16 Dark</option>
                     <option value="base16-light">Base-16 Light</option>
@@ -45,90 +33,39 @@
             </div>
         </div>
     </section>
-<section>
-<div class="container">
-    <div class="code-container">
-        <div class="code-1">
-            <textarea id="code1"><!-- HTML --></textarea><br>
-        </div>
-        <div class="code-1">
-            <textarea id="code2">
+    <section>
+        <div class="container">
+            <div class="code-container">
+                <div class="code-1">
+                    <textarea id="code1"><!-- HTML --></textarea><br>
+                </div>
+                <div class="code-1">
+                    <textarea id="code2">
 <!-- CSS (starts with style tag)-->
 <style>
   body{
     background-color: black;
   }
 </style>
-            </textarea><br>
-        </div>
-        <div class="code-1">
-            <textarea id="code3">
+                    </textarea><br>
+                </div>
+                <div class="code-1">
+                    <textarea id="code3">
 <!-- JAVA (starts with script tag)-->
 <script>
     alert("Hello World!")
 </script>
-            </textarea><br>
+                    </textarea><br>
+                </div>
+            </div>
+            <div class="run-btn">
+                <button onclick="BtnRun()">Run code!</button>
+            </div>
+            <div class="code-container">
+                <iframe id="code_result" width="100%" height="500px" style="border: 5px solid gray; background-color: white; color: black;"></iframe>
+            </div>
         </div>
-    </div>
-    <div class="run-btn">
-        <button onclick="run()">Run code!</button>
-    </div>
-    <div class="code-container">
-        <iframe id="code_result" width="100%" height="500px" style="border: 5px solid gray; background-color: white; color: black;"></iframe>
-    </div>
-</div>
-</section>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/xml/xml.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/css/css.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/javascript/javascript.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/htmlmixed/htmlmixed.js'></script>
-<script id="rendered-js">
-var doc = document.getElementById('code_result').contentWindow.document;
-var html_value;
-var css_value;
-var js_value;
-var themeCode;
-themeCode = "monokai";
-function changeFunc() {
-    var selectBox = document.getElementById("codeMode");
-    var themeCode = selectBox.options[selectBox.selectedIndex].value;
-    editor1.setOption("theme",themeCode);
-    editor2.setOption("theme",themeCode);
-    editor3.setOption("theme",themeCode);
-   }
-var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
-    styleActiveLine: true,
-    lineNumbers: true,
-    matchBrackets: true,
-    autoCloseBrackets: true,
-    autoCloseTags: true,
-    mode: "htmlmixed",
-    // theme: "monokai",
-    theme: themeCode,
-});
-var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
-    styleActiveLine: true,
-    lineNumbers: true,
-    matchBrackets: true,
-    autoCloseBrackets: true,
-    autoCloseTags: true,
-    mode: "htmlmixed",
-    // theme: "base16-dark",
-    theme: themeCode,
-});
-var editor3 = CodeMirror.fromTextArea(document.getElementById("code3"), {
-    styleActiveLine: true,
-    lineNumbers: true,
-    matchBrackets: true,
-    autoCloseBrackets: true,
-    autoCloseTags: true,
-    mode: "htmlmixed",
-    // theme: "base16-dark",
-    theme: themeCode,
-});
-</script>
-<script src="./script/app.js"></script>
+    </section>
+    <script type="text/javascript" src="./script/script.js"></script>
 </body>
-
 </html>

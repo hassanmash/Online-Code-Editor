@@ -1,3 +1,19 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-dark.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-light.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/dracula.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-day.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/3024-night.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/eclipse.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/mdn-like.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/midnight.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/neat.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/rubyblue.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-dark.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/xq-light.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css");
+
+
 body{
     background-color: #444444;
     margin: 0;
