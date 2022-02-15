@@ -22,3 +22,24 @@ function themeChange() {
             console.log("Will get to you soon!");
         })
 }
+
+var clickcount = 5;
+var valid = true;
+function easteregg() {
+    if(valid) {
+        clickcount -= 1;
+        if(!clickcount){
+            console.log("You have found the easter egg!");
+            valid = false;
+            var EEelem = document.getElementById("easteregg");
+            var p = document.createElement("p");
+            p.textContent = "Made with ♥ HASSAN MASHMOOM";
+            EEelem.appendChild(p);
+            EEelem.classList.remove("egghide");
+            EEelem.classList.add("showegg");
+        }
+    }
+    else{
+        console.log("Don't play again!")
+    }
+}
